@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block head %}
+<div>
+    
+</div>
+{% endblock %}
+{% block content %}
+<p style="Height: 200px;"></p>
+<div class="container success jumbotron text-center page-center">
+    <div class="container bg-default">
+        <h1 class="text-center">ERROR</h1>
+    </div>
+    <div>
+        <form action="/back_failure", method="GET" class="form-control form-centrale">
+            <input type="submit" value="Go back" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

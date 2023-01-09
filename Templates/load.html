@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block head %}
+<div>
+    
+</div>
+{% endblock %}
+{% block content %}
+<!doctype html>
+<html>
+  <head>
+    <title>Drag and Drop</title>
+  </head>
+  <body>
+    <div id="drop-zone">Drop CSV file here</div>
+    <script>
+      // Listen for file drop on the drop-zone element
+      document.getElementById('drop-zone').addEventListener('drop', handleFileDrop);
+
+      // Handle file drop
+      function handleFileDrop(event) {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        if (file.type === 'text/csv') {
+          // Process the CSV file
+          processCSV(file);
+        } else {
+          // Display an error message
+          alert('Please drop a CSV file');
+        }
+      }
+
+      // Process the CSV file
+      function processCSV(file) {
+        // Read the file contents
+        var reader = new FileReader();
+        reader.onload = function(event) {
+          var csvData = event.target.result;
+          // Send the CSV data to the server
+          sendDataToServer(csvData);
+        };
+        reader.readAsText(file);
+      }
+
+      // Send the CSV data to the server
+      function sendDataToServer(csvData) {
+        // Use the Fetch API to send a POST request to the server
+        fetch('/process-csv', {
+          method: 'POST',
+          body: csvData
+        });
+      }
+    </script>
+  </body>
+</html>
+{% endblock %}

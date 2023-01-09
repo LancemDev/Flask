@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block head %}
+<div class="title">
+    <title>
+        GROUPIFY *_*
+    </title>
+</div>
+{% endblock %}
+{% block content %}
+<!--THE NAVIGATION BAR-->
+<div>
+    <nav class="container navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <a class="navbar-brand text-center" href="#">GROUPIFY*_*</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active text-left" aria-current="page" href="#">Contact me</a>
+            </li>
+            </ul>
+            
+        </div>
+        </div>
+    </nav>
+</div>
+
+<!--BRIEF DESCRIPTION USING JUMBOTRON-->
+<div class="success jumbotron text-center">
+    <div class="container bg-default">
+        <h1>Hello</h1>
+        <p><h4>Groupify is your solution<br /></h4></p>
+        <p><h5>to making groups from csv files without being gender biased</h5></p>
+        <a href="a" class="btn btn-primary" >Learn more about developer</a>
+    </div>
+</div>
+
+<!--THE FORM-->
+<form action="/next" class="container" method="POST">
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">Enter email address to receive tech tips from GROUPIFY*_*</label>
+      <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="getSize" class="form-label">Number of groups</label>
+      <input type="number" class="form-control" name="size" id="getSize">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+{% endblock %}
